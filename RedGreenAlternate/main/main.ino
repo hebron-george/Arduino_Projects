@@ -28,16 +28,34 @@ void setup() {
   // set green LED pin as output
   pinMode(greenPin, OUTPUT);
 
-  digitalWrite(redPin, HIGH);
 }
 
 void loop() {
-  // Turn red on for 1s
-  delay(1000);
-  digitalWrite(redPin, LOW);
-
-  delay(1000);
   digitalWrite(redPin, HIGH);
+  delay(500);
+
+  digitalWrite(redPin, LOW);
+  delay(500);
+
+  digitalWrite(greenPin, HIGH);
+  delay(500);
+
+  digitalWrite(greenPin, LOW);
+  delay(500);
+
+  flipBothColors(HIGH);
+  delay(500);
+
+  flipBothColors(LOW);
+  delay(500);
+
+  
+
+}
+
+void flipBothColors(uint8_t flip) {
+  digitalWrite(greenPin, flip);
+  digitalWrite(redPin, flip);
 }
 
 
